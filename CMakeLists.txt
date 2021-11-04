@@ -7,6 +7,10 @@ else()
     set(CMAKE_INSTALL_PREFIX "/usr")
 endif()
 
+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    INCLUDE(GNUInstallDirs)
+endif()
+
 # Compatibility Options
 option(OPT_OVERRIDE_STD_FILESYSTEM "Use a local version of std::filesystem on systems that don't have it yet" OFF)
 
